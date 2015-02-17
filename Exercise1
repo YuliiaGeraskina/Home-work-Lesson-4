@@ -1,0 +1,14 @@
+package var2;
+
+public class myclass18 {
+	public static void main(String[] args) {
+	for (int i=10; i<21;i++) {
+	System.out.println(i);
+	}
+	int i=10;
+	while (i<21)
+	System.out.println(i++);
+	}
+	
+}
+
