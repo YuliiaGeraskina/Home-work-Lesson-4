@@ -1,0 +1,21 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class l4ex_22{
+ public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ System.out.print("Enter the array length: ");
+ int n = scanner.nextInt();
+ int [] arr = new int [2*n+1];
+ int a= n/2;
+
+  for(int i=0;i<arr.length/2+1;i++){
+   arr[n]=0;
+   arr[n+i]=i;
+   arr[n-i]=i;
+  }
+  
+ System.out.println(Arrays.toString(arr)); 
+ 
+  }
+}
