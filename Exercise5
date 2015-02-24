@@ -1,0 +1,137 @@
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class l4ex_17 {
+
+	static int add() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Введите номер ячейки: ");
+	int a= scanner.nextInt();
+		return a;
+		}
+	public static Boolean CheckWin(String arr[][]) {
+		  int i;
+		  Boolean bWin = false;
+
+		  for(i=0;i<arr.length;i++){
+		   if(arr[i][0]==arr[i][1]&&arr[i][0]==arr[i][2]&&arr[i][0]!="*"){
+		    bWin = true;
+		   }
+		   if(arr[0][i]==arr[1][i]&&arr[0][i]==arr[2][i]&&arr[0][i]!="*"){
+		    bWin = true;
+		   }
+		  }
+		  if(arr[0][0]==arr[1][1]&&arr[0][0]==arr[2][2]&&arr[0][0]!="*"){
+		   bWin = true;
+		  }
+		  if(arr[0][2]==arr[1][1]&&arr[0][2]==arr[2][0]&&arr[0][2]!="*"){
+		   bWin = true;
+		  }
+		  return bWin;
+		 }
+	
+	
+	static void add1(int x1, int x2, String x3, String[][] arr) {
+		String sText = new String ();
+		arr[x1-1][x2-1]=x3;
+		for(int i=0;i<arr.length;i++){
+		for(int j=0;j<arr[0].length;j++)
+		{
+		sText =sText + "   " + arr[i][j];
+		}
+		
+		System.out.println(sText);
+		sText = "";
+		}
+		
+		return;
+		
+	}
+	
+	
+	static int add2(String  x) {
+		int x1=Integer.parseInt(x.substring(0, 1));	
+		return x1;
+		
+}
+	static int add3(String  x) {
+	int x2=Integer.parseInt(x.substring(1));	
+	return x2;
+	}	
+	public static void main(String[] args) {
+		
+		System.out.println("Игра крестики нолики");
+		System.out.println("Крестики начинают первыми");
+		String [] [] arr = new String [3][3];
+		String sText = new String ();
+		for(int i=0;i<arr.length;i++){
+		for(int j=0;j<arr[0].length;j++)
+		{
+		arr[i][j]="*";
+		
+		sText =sText + "   " + arr[i][j];
+		}
+		System.out.println(sText);
+		sText = "";
+		}
+		for (int i=0;i<10;i++){
+			String res1 = funci(i);
+			String res="X";
+		   if (i%2==0) {res="X";} else {res="O";}	
+		   CheckWin (arr);
+			if(l4ex_17.CheckWin(arr)){
+			System.out.println(res1 + " won!!!");
+			    break;} else {		 
+							
+		int n=add();
+		switch(n){
+		case 11:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+			    break;
+		case 12:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 13:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 21:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			break;
+		case 22:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 23:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 31:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 32:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		case 33:
+			add1(add2(Integer.toString(n)), add3(Integer.toString(n)),res,arr);
+			
+		break;
+		}
+		}
+		}
+		
+		}
+	private static String funci(int i) {
+		String res1;
+		if (i%2==0) {res1="0";} else {res1="X";}
+		return res1;
+		
+		
+	}
+	
+}
+		
